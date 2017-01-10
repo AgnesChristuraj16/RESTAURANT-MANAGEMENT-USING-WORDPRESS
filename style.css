@@ -238,6 +238,10 @@ th {
 /*--------------------------------------------------------------
 # Layouts
 --------------------------------------------------------------*/
+.main-page {
+  width: 1200px;
+  margin: 0 auto; }
+
 .l-left {
   float: left; }
 
@@ -258,24 +262,78 @@ th {
     justify-content: center; }
   .l-flex.align-vert-center {
     align-items: center; }
+  .l-flex.align-vert-flex-start {
+    align-items: flex-start; }
+  .l-flex.align-hori-space-between {
+    justify-content: space-between; }
+  .l-flex.flex-wrap {
+    flex-wrap: wrap; }
 
 .is-rounded {
   border-radius: 3px; }
+
+.grid {
+  width: 1200px;
+  margin: 80px auto 30px;
+  box-sizing: border-box; }
+  .grid:after {
+    content: "";
+    display: table;
+    clear: both; }
+  .grid .col-1 {
+    width: 80px;
+    margin: 0 10px 10px;
+    float: left; }
+  .grid .col-2 {
+    width: 180px;
+    margin: 0 10px 10px;
+    float: left; }
+  .grid .col-3 {
+    width: 280px;
+    margin: 0 10px 10px;
+    float: left; }
+  .grid .col-4 {
+    width: 380px;
+    margin: 0 10px 10px;
+    float: left; }
+  .grid .col-5 {
+    width: 480px;
+    margin: 0 10px 10px;
+    float: left; }
+  .grid .col-6 {
+    width: 580px;
+    margin: 0 10px 10px;
+    float: left; }
+  .grid .col-7 {
+    width: 680px;
+    margin: 0 10px 10px;
+    float: left; }
+  .grid .col-8 {
+    width: 780px;
+    margin: 0 10px 10px;
+    float: left; }
+  .grid .col-9 {
+    width: 880px;
+    margin: 0 10px 10px;
+    float: left; }
+  .grid .col-10 {
+    width: 980px;
+    margin: 0 10px 10px;
+    float: left; }
+  .grid .col-11 {
+    width: 1080px;
+    margin: 0 10px 10px;
+    float: left; }
+  .grid .col-12 {
+    width: 1180px;
+    margin: 0 10px 10px;
+    float: left; }
 
 /*--------------------------------------------------------------
 # Structure
 --------------------------------------------------------------*/
 .full {
   width: 100%; }
-
-.clearfix:after {
-  content: "";
-  display: table;
-  clear: both; }
-
-.main-page {
-  width: 1200px;
-  margin: 0 auto; }
 
 .inner {
   padding: 20px 0; }
@@ -492,23 +550,22 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-  border: 1px solid;
-  border-color: #ccc #ccc #bbb;
+  border: 0px;
   border-radius: 3px;
   background: #DAB075;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
-  color: rgba(0, 0, 0, 0.8);
+  color: #ffffff;
   font-size: 12px;
   font-size: 0.75rem;
   line-height: 1;
-  padding: .6em 1em .4em;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8); }
+  padding: 12px 30px;
+  font-size: 16px;
+  transition: all .4s; }
   button:hover,
   input[type="button"]:hover,
   input[type="reset"]:hover,
   input[type="submit"]:hover {
-    border-color: #ccc #bbb #aaa;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02); }
+    background: #C79C5F;
+    border-color: #ccc #bbb #aaa; }
   button:active, button:focus,
   input[type="button"]:active,
   input[type="button"]:focus,
@@ -561,10 +618,14 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea {
-  color: #666;
-  border: 1px solid #ccc;
+  border: 1px solid #CFD8DC;
   border-radius: 3px;
-  padding: 3px; }
+  padding: 10px;
+  width: 550px;
+  font-family: "Raleway", sans-serif, Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  color: #263238;
+  transition: all .4s; }
   input[type="text"]:focus,
   input[type="email"]:focus,
   input[type="url"]:focus,
@@ -581,13 +642,15 @@ textarea {
   input[type="datetime-local"]:focus,
   input[type="color"]:focus,
   textarea:focus {
-    color: #111; }
+    outline: none;
+    color: #111;
+    box-shadow: 0px 0px 10px 1px #cfd8dc; }
 
 select {
   border: 1px solid #ccc; }
 
 textarea {
-  width: 100%; }
+  height: 244px; }
 
 /*--------------------------------------------------------------
 # Navigation
@@ -960,5 +1023,99 @@ object {
 
 .gallery-caption {
   display: block; }
+
+/*--------------------------------------------------------------
+# Plugin - Contact
+--------------------------------------------------------------*/
+div.wpcf7 {
+  margin: 0 !important;
+  margin-top: -16px !important;
+  padding: 0;
+  float: left !important; }
+
+div.wpcf7-response-output {
+  padding: 0.2em 1em; }
+
+div.wpcf7 .screen-reader-response {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  width: 1px;
+  margin: 0;
+  padding: 0;
+  border: 0; }
+
+div.wpcf7-mail-sent-ok {
+  color: #43A047;
+  border: 2px solid #43A047 !important; }
+
+div.wpcf7-mail-sent-ng {
+  border: 2px solid #ff0000; }
+
+div.wpcf7-spam-blocked {
+  border: 2px solid #ffa500; }
+
+div.wpcf7-validation-errors {
+  color: #e53935 !important;
+  border: 2px solid #e53935 !important;
+  border-radius: 3px; }
+
+.wpcf7-form-control-wrap {
+  position: relative; }
+
+span.wpcf7-not-valid-tip {
+  color: #e53935 !important;
+  font-size: 1em;
+  display: block; }
+
+.use-floating-validation-tip span.wpcf7-not-valid-tip {
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  z-index: 100;
+  border: 1px solid #ff0000;
+  background: #fff;
+  padding: .2em .8em; }
+
+span.wpcf7-list-item {
+  display: inline-block;
+  margin: 0 0 0 1em; }
+
+span.wpcf7-list-item-label::before,
+span.wpcf7-list-item-label::after {
+  content: " "; }
+
+.wpcf7-display-none {
+  display: none; }
+
+div.wpcf7 .ajax-loader {
+  visibility: hidden;
+  display: inline-block;
+  background-image: url("../../images/ajax-loader.gif");
+  width: 16px;
+  height: 16px;
+  border: none;
+  padding: 0;
+  margin: 0 0 0 4px;
+  vertical-align: middle; }
+
+div.wpcf7 .ajax-loader.is-active {
+  visibility: visible; }
+
+div.wpcf7 div.ajax-error {
+  display: none; }
+
+div.wpcf7 .placeheld {
+  color: #888; }
+
+div.wpcf7 .wpcf7-recaptcha iframe {
+  margin-bottom: 0; }
+
+div.wpcf7 input[type="file"] {
+  cursor: pointer; }
+
+div.wpcf7 input[type="file"]:disabled {
+  cursor: default; }
 
 /*# sourceMappingURL=style.css.map */
