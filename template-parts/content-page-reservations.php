@@ -10,15 +10,18 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-	</header><!-- .entry-header -->
 
 	<div class="entry-content">
 
-		<?php
-			the_content();
+		<?php the_content(); ?>
 
+			<h1 class="reservation-ot-title"><?php echo the_field('ot_title') ?></h1>
+
+			<p class="reservation-ot-description"><?php echo the_field('ot_description') ?></p>
+
+			<script type='text/javascript' src='//www.opentable.com/widget/reservation/loader?rid=<?php echo the_field('ot_restaurant_id') ?>&domain=com&type=standard&theme=wide&lang=en&overlay=false&iframe=false'></script>
+
+		<?php
 			wp_link_pages( array(
 				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'dojo' ),
 				'after'  => '</div>',
@@ -42,3 +45,5 @@
 		</footer><!-- .entry-footer -->
 	<?php endif; ?>
 </article><!-- #post-## -->
+
+
